@@ -1,0 +1,7 @@
+<div ng-controller="productCtrl" class="show">
+    <button type="button" class="btn btn-danger btn-lg" ng-click="getProducts()">Get Products From Database</button>
+    <br>
+    <ul ng-repeat="i in result" style="margin:0px; padding:0px; list-style:none;">
+        <li class="list-inline"><img src="{{i.image}}" alt="No Image Found...."></li>
+    </ul>
+</div>

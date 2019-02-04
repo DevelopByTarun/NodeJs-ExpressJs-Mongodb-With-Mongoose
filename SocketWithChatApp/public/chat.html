@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
+    <script src="js/chat.js"></script>
+    <title>Document</title>
+    <style>
+        #main {
+            border: 2 solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <article>
+                    <br><br>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12" id="main">
+                                <textarea cols="60" rows="10" id="content"></textarea><br>
+                                <textarea cols="30" rows="4" id="field"></textarea>
+                                <button type="button" class="btn btn-danger btn-lg" id="bt">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Index</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./stylesheet/home.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+    <script src="./script/config/config.js"></script>
+    <script src="./script/modal/app.js"></script>
+    <script src="./script/factory/productFactory.js"></script>
+    <script src="./script/controller/productController.js"></script>
+    <script src="./script/route/spaRoute.js"></script>
+</head>
+<body ng-app="productProblemApp">
+    <br>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <header>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <nav class="navbar navbar-inverse">
+                                    <div class="container-fluid">
+                                        <div class="navbar-header">
+                                            <a class="navbar-brand" href="#">ProductProblem</a>
+                                        </div>
+                                        <ul class="nav navbar-nav">
+                                            <li class="active"><a href="#/">Home</a></li>
+                                            <li><a ng-href="#/product">Products</a></li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <article>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div id="showView" ng-view>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>  
+</body>
+</html>
