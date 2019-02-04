@@ -24,7 +24,7 @@ Some Testing Tools Like Mocha And Chai
 
 Use Heroku For Live Your Application
 
-## Copy
+## Copyright
 
 Copyright (c) 2011-2016 Tarun <[https://github.com/DevelopByTarun](https://github.com/DevelopByTarun)>
 
