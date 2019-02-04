@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="angular.min.js"></script>
+    <script>
+        var app = angular.module("myapp", []);
+        app.factory("myfactory", function($http, $q) {
+            return {
+                "caller": function() {
+                    var defered = $q.defer();
+                    var url = "http://127.0.0.1:8080/callme";
+                    $http.get(url).success(function(data) {
+                        console.log("Inside Success " + data);
+                        defered.resolve(data);
+                    }).error(function(er) {
+                        console.log("Error is ", er);
+                        defered.reject(er);
+                    });
+                    return defered.promise;
+                }
+            };
+        })
+        app.controller("myctrl", function($scope, myfactory) {
+            var promise = myfactory.caller();
+
+            function pass(data) {
+                $scope.data = data;
+            }
+
+            function fail(er) {
+                $scope.error = er;
+            }
+            promise.then(pass, fail);
+        });
+    </script>
+</head>
+
+<body ng-app="myapp" ng-controller="myctrl">
+    <h1 class="text-center">welcome to cross origin mean application</h1>
+    <br>
+    <table class="table">
+       <tr>
+           <th>Id</th>
+           <th>Name</th>
+           <th>Address</th>
+           <th>Phone</th>
+       </tr>
+        <tr ng-repeat="x in data">
+            <td>{{ x.id }}</td>
+            <td>{{ x.name }}</td>
+            <td>{{ x.address }}</td>
+            <td>{{ x.phone }}</td>
+        </tr>
+    </table>
+    <br> 
+    {{error}}
+</body>
+  
+</html>
